@@ -6,6 +6,30 @@ namespace Composer\Autoload;
 
 class ComposerStaticInita09a21e135299ab3479a318c830dd9d1
 {
+    public static $prefixLengthsPsr4 = array (
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'H' => 
+        array (
+            'HelloWorld' => 
+            array (
+                0 => __DIR__ . '/..' . '/ehime/hello-world/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
@@ -13,6 +37,9 @@ class ComposerStaticInita09a21e135299ab3479a318c830dd9d1
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInita09a21e135299ab3479a318c830dd9d1::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita09a21e135299ab3479a318c830dd9d1::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInita09a21e135299ab3479a318c830dd9d1::$prefixesPsr0;
             $loader->classMap = ComposerStaticInita09a21e135299ab3479a318c830dd9d1::$classMap;
 
         }, null, ClassLoader::class);

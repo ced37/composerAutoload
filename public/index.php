@@ -9,3 +9,7 @@ use HelloWorld\SayHello;
 $hello = new Hello();
 
 echo $hello->talk();
+
+$sayHello = new SayHello();
+
+echo $sayHello->world();
